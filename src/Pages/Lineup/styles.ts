@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { FlexContainerColumn, FlexContainerRow } from '../../Components/UI/general'
+import { LARGE_WIDTH } from '../../global/styles'
 
 export const LineupContainer = styled.div`
     ${FlexContainerColumn}
@@ -15,13 +16,17 @@ export const LineupTop = styled.div`
 `
 
 export const LineupContent = styled.div`
-    display: flex;
-    /* ${FlexContainerRow}; */
-    /* align-items: flex-start; */
+    ${FlexContainerRow};
     width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 0.5rem;
+    @media (max-width:${LARGE_WIDTH}){
+        ${FlexContainerColumn}
+        gap:3rem;
+        align-items: stretch;
+  
+    }
 `
 
 export const LineupBox = styled.section`
@@ -29,6 +34,17 @@ export const LineupBox = styled.section`
     align-items: flex-start;
     align-self: flex-start;
     width: 40%;
+    @media (max-width:${LARGE_WIDTH}){
+        width:100%;
+        align-self: center;
+        align-items: stretch;
+
+        > div{
+            margin-top:1rem ;
+            width: 100%;
+            justify-content: center;
+        }
+    }
 `
 
 export const LineupHeader = styled.header`
@@ -45,6 +61,7 @@ export const LineupHeaderItem = styled.div`
     > span{
         transform:translateX(1.5rem);
     }
+
 `
 
 export const LineupTeam = styled.div`
@@ -61,10 +78,16 @@ export const LineupTeam = styled.div`
     }
 `
 
-export const LineupBoxRight = styled(LineupBox)`
+export const LineupBoxRight = styled.div`
+    ${FlexContainerColumn}
     justify-content: space-between;
     width: 50%;
     gap:2rem;
+    align-self: stretch;
+    @media (max-width:${LARGE_WIDTH}) {
+        width:100%;
+        align-items: stretch;
+    }
 `
 
 export const LineupTitle = styled.h2`
@@ -133,7 +156,9 @@ export const LineupArticle = styled.article`
     align-items: stretch;
     background: ${p => p.theme.card};
     padding: 1rem;
+    min-height:8rem;
     box-shadow: ${p => p.theme.boxShadow};
+    
 `
 
 export const LineupSubtitle = styled.h3`
@@ -177,6 +202,7 @@ export const LineupCommentsContainer = styled(LineupArticle)`
     overflow-y: hidden;
     background: ${p => p.theme.card};
     justify-content: flex-start;
+    align-self: flex-end;
 `
 
 export const LineupComment = styled(LineupUser)`

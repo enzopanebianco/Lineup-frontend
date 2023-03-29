@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { FlexContainerRow } from '../UI/general'
 import FieldImg from '../../assets/Field.png'
+import { LARGE_WIDTH } from '../../global/styles'
 
 type ToggleProps = {
     phase: string
@@ -15,6 +16,9 @@ export const FieldContainer = styled.div`
     justify-content: stretch;
     align-items: flex-start;
     gap:1rem;
+    @media (max-width:${LARGE_WIDTH}) {
+        gap:0;
+    }
 `
 
 export const Field = styled.div`
@@ -23,6 +27,7 @@ export const Field = styled.div`
     background: ${p => p.theme.card};
     padding: 0.75rem;
     border-radius: 6px;
+   
 `
 export const FieldContent = styled.div`
     background-repeat: no-repeat;
@@ -36,6 +41,9 @@ export const FieldSwitcherPhase = styled.div`
     ${FlexContainerRow}
     gap:0.75rem;
     margin-top: 0.5rem;
+    @media (max-width:${LARGE_WIDTH}) {
+       transform: translateX(3rem);
+    }
 `
 export const Switch = styled.div`
     width: 2rem;
