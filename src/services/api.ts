@@ -6,7 +6,7 @@ interface ResponseData<T> extends AxiosResponse {
 }
 
 const api = axios.create({
-    baseURL: 'https://localhost:4000'
+    baseURL: 'http://localhost:4000'
 })
 
 
