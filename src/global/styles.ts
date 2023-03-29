@@ -16,4 +16,6 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
+export const LARGE_WIDTH = '1100px'
+
 export { GlobalStyle }
